@@ -2,6 +2,17 @@
 Guides : https://ko.nuxtjs.org/guide/installation
 
 ## Mac
+``bash
+# Upgrade NodeJS
+$ node -v
+v8.11.4
+$ sudo npm cache clean -f
+$ sudo npm install -g n
+$ sudo ~/.npm-global/bin/n stable
+$ node -v
+v10.16.0
+```
+
 ```bash
 # (not working)
 # sudo npm install -g @vue/cli @vue/cli-init --unsafe-perm

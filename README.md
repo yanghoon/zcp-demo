@@ -1,4 +1,4 @@
-# zcp-demo
+# Kubernetes Showcase
 
 > Nuxt.js project
 
@@ -23,24 +23,36 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 
 ## Dependencies
 ### Material Design Lite (https://getmdl.io/)
+```javascript
+  // (not working) yarn add material-design-lite --dev
+  head: {
+    title: 'Demo',
+    ...
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
+      { rel: 'stylesheet', href: 'https://code.getmdl.io/1.3.0/material.indigo-pink.min.css' },
+      { rel: 'stylesheet', type: 'text/css',  href: 'http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' }
+    ],
+    script: [
+      { src: 'https://code.getmdl.io/1.3.0/material.min.js' }
+    ]
+  },
 ```
-$ yarn add material-design-lite --dev
 
+### Axios - HTTP client (https://www.npmjs.com/package/axios)
+```bash
 $ yarn add axios --dev
-yarn add v1.9.4
-[1/4] 🔍  Resolving packages...
-[2/4] 🚚  Fetching packages...
-info fsevents@2.0.7: The engine "node" is incompatible with this module. Expected version "^8.16.0 || ^10.6.0 || >=11.0.0".
-info "fsevents@2.0.7" is an optional dependency and failed compatibility check. Excluding it from installation.
-[3/4] 🔗  Linking dependencies...
-warning " > eslint-loader@2.1.2" has unmet peer dependency "webpack@>=2.0.0 <5.0.0".
-[4/4] 📃  Building fresh packages...
-success Saved lockfile.
-success Saved 2 new dependencies.
-info Direct dependencies
-└─ axios@0.19.0
-info All dependencies
-├─ axios@0.19.0
-└─ follow-redirects@1.5.10
-✨  Done in 2.87s.
+```
+
+### Kubernetes Client (https://github.com/kubernetes-client/javascript)
+* Support to load ServiceAccount and KUBECONFIG
+```bash
+$ yarn add @kubernetes/client-node --dev
+```
+```javascript
+  serverMiddleware: [
+    '~/api/common.js',
+    { path: '/api/k8s', handler: '~/api/k8s.js' },
+  ],
 ```

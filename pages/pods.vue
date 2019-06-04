@@ -16,18 +16,18 @@
       <!-- <td><a v-bind:href="https://pog-dev-monitoring.cloudzcp.io"></a></td> -->
       <td>
         <a v-bind:href="link_usage(pod)" target="_blank">
-          <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" click>
+          <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
             <i class="material-icons">assessment</i>
           </button>
         </a>
-        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" click>
-          <i class="material-icons">delete</i>
-        </button>
         <a v-bind:href="link_exec(pod)" target="_blank">
           <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
             <i class="material-icons">desktop_windows</i>
           </button>
         </a>
+        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" disabled>
+          <i class="material-icons">delete</i>
+        </button>
       </td>
     </tr>
   </tbody>
@@ -43,11 +43,12 @@ export default {
   data () {
     return {
       site: 'pog-dev',
+      namespace: 'zcp-system',
       pods: {}
     }
   },
   created () {
-    axios.get(`/api/pods.json`)
+    axios.get(`/api/k8s/pods?ns=${this.namespace}`)
       .then((res)=>this.pods = res.data)
   },
   methods: {

@@ -1,41 +1,26 @@
 <template>
-  <div class="demo-layout-waterfall mdl-layout mdl-js-layout mdl-layout--no-drawer-button">
-    <header class="mdl-layout__header mdl-layout__header--waterfall">
-      <!-- Top row, always visible -->
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button">
+    <header class="mdl-layout__header">
+      <!-- Title -->
       <div class="mdl-layout__header-row">
-        <!-- Title -->
-
-        <span class="mdl-layout-title">
-          Demo
-        </span>
-
-        <div class="mdl-layout-spacer"></div>
-
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
-                    mdl-textfield--floating-label mdl-textfield--align-right">
-          <label class="mdl-button mdl-js-button mdl-button--icon" for="waterfall-exp">
-            <i class="material-icons">search</i>
-          </label>
-          <div class="mdl-textfield__expandable-holder">
-            <input class="mdl-textfield__input" type="text" name="sample" id="waterfall-exp">
-          </div>
-        </div>
+        <span class="mdl-layout-title">Demo</span>
       </div>
-      <!-- Bottom row, not visible on scroll -->
-      <div class="mdl-layout__header-row">
-        <div class="mdl-layout-spacer"></div>
-        <!-- Navigation -->
-        <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">
-            <i class="material-icons">add</i>Create
-          </a>
-          <a class="mdl-navigation__link" href=""></a>
-          <a class="mdl-navigation__link" href=""></a>
-          <a class="mdl-navigation__link" href=""></a>
-        </nav>
+      <!-- Tabs -->
+      <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+        <a href="#scenario" class="mdl-layout__tab is-active" @click="changeTab">Scenario</a>
+        <a href="#pods" class="mdl-layout__tab" @click="changeTab">Kubernetes (Pods)</a>
+        <!-- 
+        <a href="#scroll-tab-3" class="mdl-layout__tab">Tab 3</a>
+        <a href="#scroll-tab-4" class="mdl-layout__tab">Tab 4</a>
+        <a href="#scroll-tab-5" class="mdl-layout__tab">Tab 5</a>
+        <a href="#scroll-tab-6" class="mdl-layout__tab">Tab 6</a>
+        -->
       </div>
     </header>
     <main class="mdl-layout__content">
+      <section class="mdl-layout__tab-panel" id="pods"> </section>
+      <section class="mdl-layout__tab-panel" id="scenario"> </section>
+
       <div class="page-content">
         <!-- Your content goes here -->
         <div class="mdl-grid">
@@ -48,6 +33,21 @@
   </div>
 </template>
 
+<script>
+export default {
+  methods: {
+    changeTab (e) {
+      // location.pathname = e.target.parentElement.getAttribute('href').replace('#', '/');
+      let hash = e.target.parentElement.getAttribute('href') || '#scenario';
+      this.$router.push({path: hash.replace('#', '/')})
+    }
+  }
+}
+</script>
+
 <style>
+.page-content{
+  background-color: rgb(250, 250, 250);
+}
 </style>
 
