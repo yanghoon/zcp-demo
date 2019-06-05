@@ -3,12 +3,14 @@
     <header class="mdl-layout__header">
       <!-- Title -->
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">Demo</span>
+        <span class="mdl-layout-title">Showcase</span>
+        &nbsp;
+        <i class="material-icons">movie</i>
       </div>
       <!-- Tabs -->
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
         <a href="#scenario" class="mdl-layout__tab is-active" @click="changeTab">Scenario</a>
-        <a href="#pods" class="mdl-layout__tab" @click="changeTab">Kubernetes (Pods)</a>
+        <a href="#pods" class="mdl-layout__tab" @click="changeTab">Kubernetes</a>
         <!-- 
         <a href="#scroll-tab-3" class="mdl-layout__tab">Tab 3</a>
         <a href="#scroll-tab-4" class="mdl-layout__tab">Tab 4</a>
@@ -48,6 +50,9 @@ export default {
 <style>
 .page-content{
   background-color: rgb(250, 250, 250);
+}
+.mdl-layout-title i {
+
 }
 </style>
 

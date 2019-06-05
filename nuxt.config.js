@@ -20,16 +20,17 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
-      { rel: 'stylesheet', href: 'https://code.getmdl.io/1.3.0/material.indigo-pink.min.css' },
+      { rel: 'stylesheet', href: 'https://code.getmdl.io/1.3.0/material.indigo-blue.min.css' },
+      // { rel: 'stylesheet', href: 'https://code.getmdl.io/1.3.0/material.pink-cyan.min.css' },
       { rel: 'stylesheet', type: 'text/css',  href: 'http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' }
     ],
     script: [
       { src: 'https://code.getmdl.io/1.3.0/material.min.js' }
     ]
   },
-  css: [
-    'material-design-lite/material.min.css'
-  ],
+  // css: [
+  //   'material-design-lite/material.min.css'
+  // ],
   /*
   ** Customize the progress bar color
   */
