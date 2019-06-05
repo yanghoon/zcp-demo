@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: k8s-showcase
+  labels:
+    app: showcase
+    lang: node
+data:
+  entrypoint.sh: |-
+    #!/bin/bash
+
+    apk add git
+    cd /app && git clone https://github.com/yanghoon/zcp-demo.git && cd zcp-demo
+    yarn install
+    yarn run build && yarn run start
+
+    while true; do
+      sleep 300 # 5m
+    done

@@ -1,0 +1,60 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: k8s-showcase
+  labels:
+    app: showcase
+    lang: node
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: showcase
+        lang: node
+    spec:
+      containers:
+      - name: nuxt
+        image: node:10.16-alpine
+        imagePullPolicy: Always
+        command: ['/bin/sh']
+        # args: ['-c', 'while true; do sleep 300; done']
+        args: ['/app/entrypoint.sh']
+        ports:
+        - name: nuxt
+          containerPort: 3000
+        resources:
+          requests:
+            cpu: 200m
+            memory: 200Mi
+          limits:
+            cpu: 500m
+            memory: 400Mi
+        volumeMounts:
+        - name: script
+          mountPath: /app/entrypoint.sh
+          subPath: entrypoint.sh
+      volumes:
+      - name: script
+        configMap:
+          name: k8s-showcase
+      serviceAccount: zcp-system-admin
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s-showcase
+  labels:
+    app: showcase
+    lang: node
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 3000
+    protocol: TCP
+    name: http
+  selector:
+    app: showcase
+    lang: node

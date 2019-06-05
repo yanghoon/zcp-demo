@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: k8s-showcase
+  labels:
+    app: showcase
+    lang: node
+  annotations:
+    #ingress.bluemix.net/ALB-ID: private-cr7a9b181c82674f478e461c648c3000da-alb1
+    ingress.bluemix.net/redirect-to-https: "True" 
+spec:
+  rules:
+  - host: showcase.cloudzcp.io
+    http:
+      paths:
+      - backend:
+          serviceName: k8s-showcase
+          servicePort: 80
+  tls:
+  - hosts:
+    - showcase.cloudzcp.io
+    secretName: cloudzcp-io-cert
