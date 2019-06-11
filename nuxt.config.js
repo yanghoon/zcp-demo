@@ -6,6 +6,7 @@ module.exports = {
   serverMiddleware: [
     '~/api/common.js',
     { path: '/api/k8s', handler: '~/api/k8s.js' },
+    { path: '/api/loads', handler: '~/api/loads.js' },
   ],
   /*
   ** Headers of the page
