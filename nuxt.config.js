@@ -52,7 +52,10 @@ module.exports = {
         })
       }
     },
-    vendor: ['axios'],
+    vendor: [
+      'axios',
+      '@kubernetes/client-node'
+    ],
     watch: ['api']  // https://github.com/nuxt/nuxt.js/issues/1819#issuecomment-335565769
   }
 }
