@@ -49,7 +49,7 @@ export default {
 
 <style>
 .page-content{
-  background-color: rgb(250, 250, 250);
+  /* background-color: rgb(250, 250, 250); */
 }
 .mdl-layout-title i {
 
