@@ -23,9 +23,9 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
       // { rel: 'stylesheet', href: 'https://code.getmdl.io/1.3.0/material.indigo-blue.min.css' },
       // { rel: 'stylesheet', href: 'https://code.getmdl.io/1.3.0/material.pink-cyan.min.css' },
+      { rel: 'stylesheet', href: 'https://rawgit.com/MEYVN-digital/mdl-selectfield/master/mdl-selectfield.min.css' },
       { rel: 'stylesheet', href: '/material.rally.min.css' },
       { rel: 'stylesheet', type: 'text/css',  href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' },
-      { rel: 'stylesheet', href: 'https://rawgit.com/MEYVN-digital/mdl-selectfield/master/mdl-selectfield.min.css' }
     ],
     script: [
       { src: 'https://code.getmdl.io/1.3.0/material.min.js' },

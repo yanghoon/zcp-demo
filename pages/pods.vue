@@ -205,5 +205,15 @@ export default {
 .h4 {
   margin: 15px 0 15px;
 }
+
+.mdl-selectfield__label {
+  color: white;
+}
+.mdl-selectfield__box>.mdl-selectfield__arrow-down__container {
+  width: auto;
+}
+.mdl-selectfield__box>.mdl-selectfield__arrow-down__container .mdl-selectfield__arrow-down {
+  border-top: 5px solid white;
+}
 </style>
 
